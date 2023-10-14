@@ -39,6 +39,23 @@ int CountLastName(OMS* oms, House* house, string searchLastName)
 	}
 	//return 0;
 }
+int CountLastName(OMS* oms, string searchLastName)
+{
+	if (*oms == searchLastName)
+	{
+		return 1;
+	}
+	
+}
+int CountLastName( House* house, string searchLastName)
+{
+	if (*house == searchLastName)
+	{
+		return 1;
+	}
+	//return 0;
+}
+
 
 int main()
 {
