@@ -7,16 +7,21 @@
 using namespace std;
 
 //Вариант А.
-//Задание 1. Использовать структуру классов, 
+//Задание 1. Использовать структуру классов,
 //спроектированную на  практическом занятии №5.
 //Наследование одного из производных классов осуществить по типу private.
-//Перегрузить оператор для работы с объектами классов 
+//Перегрузить оператор для работы с объектами классов
 //и использовать его для определения Вычисляемого показателя.
 
+string ReturnString(string text)
+{
+	cout << text;
+	cin >> text;
+	return text;
+}
 
 int GetRandomNumber(int min, int max)
 {
-int GetRandomNumber(int min, int max) {
 	static random_device rd;
 	static mt19937 generator(rd());
 	uniform_int_distribution<int> distribution(min, max);
@@ -27,36 +32,47 @@ int GetRandomNumber(int min, int max) {
 
 	return randomValue;
 }
-int CountLastName(OMS* oms, House* house, string searchLastName)
-int CountLastName(OMS* oms, House* house)
+int CountLastName(OMS* oms[], House* house[], string searchLastName, int numPolis)
 {
-	if (*oms == searchLastName)
+	int count{};
+	for (int k = 0; k < numPolis; k++)
 	{
-		return 1;
-	else if (*house == searchLastName)
-	{
-		return 1;
+		if (*oms[k] == searchLastName)
+		{
+			count++;
+		}
+		else if (*house[k] == searchLastName)
+		{
+			count++;
+		}
 	}
-	//return 0;
-}
-int CountLastName(OMS* oms, string searchLastName)
-{
-	if (*oms == searchLastName)
-	{
-		return 1;
-	}
-	
-}
-int CountLastName( House* house, string searchLastName)
-{
-	if (*house == searchLastName)
-	{
-		return 1;
-	}
-	//return 0;
-}
+	return count;
 }
 
+int CountLastName(OMS* oms[], string searchLastName, int numPolis)
+{
+	int count{};
+	for (int k = 0; k < numPolis; k++)
+	{
+		if (*oms[k] == searchLastName)
+		{
+			count++;
+		}
+	}
+	return count;
+}
+int CountLastName(House* house[], string searchLastName, int numPolis)
+{
+	int count{};
+	for (int k = 0; k < numPolis; k++)
+	{
+		if (*house[k] == searchLastName)
+		{
+			count++;
+		}
+	}
+	return count;
+}
 
 int main()
 {
@@ -93,20 +109,37 @@ int main()
 		houseArray[i]->print();
 	}
 	string searchLastName = "";
+	string typePolis;
 	while (searchLastName != "q" && searchLastName != "Q")
 	{
-		cout << "Введите фамилию для поиска: ";
-		cin >> searchLastName;
-	cin >> searchLastName;
-		for (int k = 0; k < numPolis; k++)
+		string resultPolis;
+		typePolis = ReturnString("Введите тип полиса: ");
+		for (char& c : typePolis)
 		{
-			count += CountLastName(omsArray[k], houseArray[k], searchLastName);
+			resultPolis += tolower(c);
+		}
+
+		if (resultPolis == "oms")
+		{
+			count = CountLastName(omsArray, ReturnString("Введите фамилию для поиска: "), numPolis);
+		}
+		else if (resultPolis == "house")
+		{
+			count = CountLastName(houseArray, ReturnString("Введите фамилию для поиска: "), numPolis);
+		}
+		else if (resultPolis == "all")
+		{
+			count = CountLastName(omsArray, houseArray, ReturnString("Введите фамилию для поиска: "), numPolis);
+		}
+		else
+		{
+			cout << "Такого типа полиса не существует! " << endl;
+			continue;
 		}
 
 		cout << "Количество полюсов на заданную фамилию: " << count << endl;
 		count = 0;
 	}
-	cout << "Количество полюсов на заданную фамилию: " << count << endl;
 
 	for (int i = 0; i < numPolis; i++)
 	{

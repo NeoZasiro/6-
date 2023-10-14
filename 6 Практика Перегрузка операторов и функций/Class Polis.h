@@ -24,7 +24,6 @@ public:
 		cout << "Память полиса под номером: " << InfoPolis.polisNumber << " была очищена!" << endl;
 	}
 	bool operator==(string SearchLastName);
-
 };
 
 bool Polis::operator==(string SearchLastName)
