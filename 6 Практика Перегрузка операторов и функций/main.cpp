@@ -13,10 +13,9 @@ using namespace std;
 //Перегрузить оператор для работы с объектами классов 
 //и использовать его для определения Вычисляемого показателя.
 
-string searchLastName;
-int Globalcount = 0;
 
-int GetRandomNumber(int min, int max) {
+int GetRandomNumber(int min, int max)
+{
 	static random_device rd;
 	static mt19937 generator(rd());
 	uniform_int_distribution<int> distribution(min, max);
@@ -28,18 +27,17 @@ int GetRandomNumber(int min, int max) {
 	return randomValue;
 }
 
-int CountLastName(OMS* oms, House* house)
+int CountLastName(OMS* oms, House* house, string searchLastName)
 {
 	if (*oms == searchLastName)
 	{
-		Globalcount++;
+		return 1;
 	}
 	else if (*house == searchLastName)
 	{
-		Globalcount++;
+		return 1;
 	}
-
-	return Globalcount;
+	//return 0;
 }
 
 int main()
@@ -76,16 +74,21 @@ int main()
 	{
 		houseArray[i]->print();
 	}
-
-	cout << "Введите фамилию для поиска: ";
-	cin >> searchLastName;
-
-	for (int k = 0; k < numPolis; k++)
+	string searchLastName = "";
+	while (searchLastName != "q" && searchLastName != "Q")
 	{
-		count = CountLastName(omsArray[k], houseArray[k]);
+
+		cout << "Введите фамилию для поиска: ";
+		cin >> searchLastName;
+
+		for (int k = 0; k < numPolis; k++)
+		{
+			count += CountLastName(omsArray[k], houseArray[k], searchLastName);
+		}
+
+		cout << "Количество полюсов на заданную фамилию: " << count << endl;
+		count = 0;
 	}
-	
-	cout << "Количество полюсов на заданную фамилию: " << count << endl;
 
 	for (int i = 0; i < numPolis; i++)
 	{
@@ -100,6 +103,5 @@ int main()
 		delete houseArray[i];
 	}
 	delete[] houseArray;
-
-	return 0;
+	//return 0;
 }
