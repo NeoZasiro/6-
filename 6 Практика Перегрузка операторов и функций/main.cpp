@@ -13,9 +13,7 @@ using namespace std;
 //Перегрузить оператор для работы с объектами классов 
 //и использовать его для определения Вычисляемого показателя.
 
-string searchLastName;
-int Globalcount = 0;
-
+	
 int GetRandomNumber(int min, int max) {
 	static random_device rd;
 	static mt19937 generator(rd());
@@ -28,19 +26,23 @@ int GetRandomNumber(int min, int max) {
 	return randomValue;
 }
 
-int CountLastName(OMS* oms, House* house)
+int CountLastName(OMS* oms, string searchLastName)
 {
 	if (*oms == searchLastName)
 	{
-		Globalcount++;
+		return 1;
 	}
-	else if (*house == searchLastName)
-	{
-		Globalcount++;
-	}
-
-	return Globalcount;
 }
+
+int CountLastName(House* house, string searchLastName)
+{
+	if (*house == searchLastName)
+	{
+		return 1;
+	}
+}
+
+
 
 int main()
 {
@@ -77,14 +79,18 @@ int main()
 		houseArray[i]->print();
 	}
 
+	string searchLastName;
 	cout << "Введите фамилию для поиска: ";
 	cin >> searchLastName;
 
 	for (int k = 0; k < numPolis; k++)
 	{
-		count = CountLastName(omsArray[k], houseArray[k]);
+		count += CountLastName(omsArray[k], searchLastName);
+		count += CountLastName(houseArray[k], searchLastName);
 	}
 	
+	
+
 	cout << "Количество полюсов на заданную фамилию: " << count << endl;
 
 	for (int i = 0; i < numPolis; i++)
