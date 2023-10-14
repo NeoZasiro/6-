@@ -94,9 +94,16 @@ int main()
 	string searchLastName = "";
 	while (searchLastName != "q" && searchLastName != "Q")
 	{
+		cout << "Введите тип полиса";
+		if (true)
+		{
+
+		}
 
 		cout << "Введите фамилию для поиска: ";
 		cin >> searchLastName;
+
+
 
 		for (int k = 0; k < numPolis; k++)
 		{
