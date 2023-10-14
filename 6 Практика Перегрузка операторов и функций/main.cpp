@@ -83,11 +83,11 @@ int main()
 	int count = 0;
 	OMS** omsArray = new OMS * [numPolis]
 		{
-			new OMS(GetRandomNumber(0, 2000), "Иван", "Иванов", "01.01.2025", "01.01.1990", "Мужской"),
-				new OMS(GetRandomNumber(0, 2000), "Мария", "Кузнецова", "01.01.2024", "15.05.1985", "Женский"),
-				new OMS(GetRandomNumber(0, 2000), "Петр", "Федоров", "01.01.2025", "05.09.1980", "Мужской"),
-				new OMS(GetRandomNumber(0, 2000), "Алексей", "Федоров", "01.01.2023", "20.03.1975", "Мужской"),
-				new OMS(GetRandomNumber(0, 2000), "Елена", "Ковалева", "01.01.2024", "10.12.1992", "Женский")
+			new OMS("Иван", "Иванов", "01.01.2025", "01.01.1990", "Мужской"),
+				new OMS("Мария", "Кузнецова", "01.01.2024", "15.05.1985", "Женский"),
+				new OMS("Петр", "Федоров", "01.01.2025", "05.09.1980", "Мужской"),
+				new OMS("Алексей", "Федоров", "01.01.2023", "20.03.1975", "Мужской"),
+				new OMS("Елена", "Ковалева", "01.01.2024", "10.12.1992", "Женский")
 		};
 
 	for (int i = 0; i < numPolis; i++)
@@ -97,11 +97,11 @@ int main()
 
 	House** houseArray = new House * [numPolis]
 		{
-			new House(GetRandomNumber(10000, 20000), "Денис", "Михайлов", "01.01.2023", "ул. Гагарина, д. 789", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
-				new House(GetRandomNumber(10000, 20000), "Ольга", "Козлова", "01.01.2024", "ул. Пушкина, д. 456", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
-				new House(GetRandomNumber(10000, 20000), "Андрей", "Иванов", "01.01.2023", "ул. Ленина, д. 123", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
-				new House(GetRandomNumber(10000, 20000), "Сергей", "Иванов", "01.01.2025", "ул. Советская, д. 321", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
-				new House(GetRandomNumber(10000, 20000), "Кирилл", "Федоров", "01.01.2024", "ул. Ломоносова, д. 654", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000))
+			new House("Денис", "Михайлов", "01.01.2023", "ул. Гагарина, д. 789", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
+				new House("Ольга", "Козлова", "01.01.2024", "ул. Пушкина, д. 456", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
+				new House("Андрей", "Иванов", "01.01.2023", "ул. Ленина, д. 123", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
+				new House("Сергей", "Иванов", "01.01.2025", "ул. Советская, д. 321", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
+				new House("Кирилл", "Федоров", "01.01.2024", "ул. Ломоносова, д. 654", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000))
 		};
 
 	for (int i = 0; i < numPolis; i++)
@@ -154,5 +154,4 @@ int main()
 		delete houseArray[i];
 	}
 	delete[] houseArray;
-	//return 0;
 }

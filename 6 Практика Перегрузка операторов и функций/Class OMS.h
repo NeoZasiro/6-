@@ -12,8 +12,8 @@ private:
 		string gender;
 	}Oms;
 public:
-	OMS(int polisNumber, string firstName, string lastName, string validity, string birthDate, string gender)
-		: Polis(polisNumber, firstName, lastName, validity), Oms{ birthDate, gender }
+	OMS(string firstName, string lastName, string validity, string birthDate, string gender)
+		: Polis(firstName, lastName, validity), Oms{ birthDate, gender }
 	{
 	}
 	~OMS()

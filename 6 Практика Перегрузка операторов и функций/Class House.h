@@ -15,8 +15,8 @@ private:
 		int summa;
 	} InfoHouse;
 public:
-	House(int polisNumber, string firstName, string lastName, string validity, string adress, int square, int cost, int summa)
-		: Polis(polisNumber, firstName, lastName, validity), InfoHouse{ adress, square , cost, summa }
+	House(string firstName, string lastName, string validity, string adress, int square, int cost, int summa)
+		: Polis(firstName, lastName, validity), InfoHouse{ adress, square , cost, summa }
 	{
 	}
 	~House()
