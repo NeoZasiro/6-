@@ -111,27 +111,34 @@ int main()
 	}
 	string searchLastName = "";
 	string typePolis;
-	while (searchLastName != "q" && searchLastName != "Q")
+	while (typePolis != "q" && typePolis != "Q")
 	{
 		string resultPolis;
 		typePolis = ReturnString("Введите тип полиса: ");
-		searchLastName = ReturnString("Введите фамилию для поиска: ");
+		// searchLastName = ReturnString("Введите фамилию для поиска: ");
 
 		for (char& c : typePolis)
 		{
 			resultPolis += tolower(c);
 		}
-
-		if (resultPolis == "oms")
+		if (typePolis == "q" || typePolis == "Q")
 		{
+			cout << "Выход" << endl;
+			continue;
+		}
+		else if (resultPolis == "oms")
+		{
+			searchLastName = ReturnString("Введите фамилию для поиска: ");
 			count = CountLastName(omsArray, searchLastName, numPolis);
 		}
 		else if (resultPolis == "house")
 		{
+			searchLastName = ReturnString("Введите фамилию для поиска: ");
 			count = CountLastName(houseArray, searchLastName, numPolis);
 		}
 		else if (resultPolis == "all")
 		{
+			searchLastName = ReturnString("Введите фамилию для поиска: ");
 			count = CountLastName(omsArray, houseArray, searchLastName, numPolis);
 		}
 		else
@@ -139,11 +146,10 @@ int main()
 			cout << "Такого типа полиса не существует! " << endl;
 			continue;
 		}
-		if (searchLastName != "Q" && searchLastName != "q")
-		{
-			cout << "Количество полюсов на заданную фамилию: " << count << endl;
-			count = 0;
-		}
+		
+		cout << "Количество полюсов на заданную фамилию: " << count << endl;
+		count = 0;
+		
 	}
 
 	for (int i = 0; i < numPolis; i++)
