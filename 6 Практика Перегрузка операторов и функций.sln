@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "6 Практика Перегрузка операторов и функций", "6 Практика Перегрузка операторов и функций\6 Практика Перегрузка операторов и функций.vcxproj", "{194D03B9-1CB9-4647-A3A4-F52BD48F8FCF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Model", "Model\Model.vcxproj", "{DCCD57D3-A75B-49EF-A661-A0674BCB2902}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{194D03B9-1CB9-4647-A3A4-F52BD48F8FCF}.Release|x64.Build.0 = Release|x64
 		{194D03B9-1CB9-4647-A3A4-F52BD48F8FCF}.Release|x86.ActiveCfg = Release|Win32
 		{194D03B9-1CB9-4647-A3A4-F52BD48F8FCF}.Release|x86.Build.0 = Release|Win32
+		{DCCD57D3-A75B-49EF-A661-A0674BCB2902}.Debug|x64.ActiveCfg = Debug|x64
+		{DCCD57D3-A75B-49EF-A661-A0674BCB2902}.Debug|x64.Build.0 = Debug|x64
+		{DCCD57D3-A75B-49EF-A661-A0674BCB2902}.Debug|x86.ActiveCfg = Debug|Win32
+		{DCCD57D3-A75B-49EF-A661-A0674BCB2902}.Debug|x86.Build.0 = Debug|Win32
+		{DCCD57D3-A75B-49EF-A661-A0674BCB2902}.Release|x64.ActiveCfg = Release|x64
+		{DCCD57D3-A75B-49EF-A661-A0674BCB2902}.Release|x64.Build.0 = Release|x64
+		{DCCD57D3-A75B-49EF-A661-A0674BCB2902}.Release|x86.ActiveCfg = Release|Win32
+		{DCCD57D3-A75B-49EF-A661-A0674BCB2902}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

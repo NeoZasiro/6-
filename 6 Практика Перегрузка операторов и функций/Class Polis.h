@@ -21,6 +21,8 @@ public:
 		cout << "Полис под номером: " << polisNumber << " был создан." << endl;
 	}*/
 
+	string getFerstname() { return InfoPolis.firstName; }
+
 	Polis(string firstName, string lastName, string validity)
 		: InfoPolis{ id++, firstName, lastName, validity }
 	{

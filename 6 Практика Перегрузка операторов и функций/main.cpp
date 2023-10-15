@@ -5,6 +5,7 @@
 #include "Class House.h"
 #include <iomanip>
 using namespace std;
+using namespace Model;
 
 //Вариант А.
 //Задание 1. Использовать структуру классов,
@@ -32,7 +33,7 @@ int GetRandomNumber(int min, int max)
 
 	return randomValue;
 }
-int CountLastName(OMS* oms[], House* house[], string searchLastName, int numPolis)
+int CountLastName(OMS* oms[], Model::House* house[], string searchLastName, int numPolis)
 {
 	int count{};
 	for (int k = 0; k < numPolis; k++)
