@@ -22,7 +22,7 @@ public:
 	}*/
 
 	Polis(string firstName, string lastName, string validity)
-		: InfoPolis{ id++, firstName, lastName, validity}
+		: InfoPolis{ id++, firstName, lastName, validity }
 	{
 		cout << "Полис под номером: " << id - 1 << " был создан." << endl;
 	}

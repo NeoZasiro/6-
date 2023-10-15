@@ -103,7 +103,7 @@ int main()
 				new House("Сергей", "Иванов", "01.01.2025", "ул. Советская, д. 321", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
 				new House("Кирилл", "Федоров", "01.01.2024", "ул. Ломоносова, д. 654", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000))
 		};
-
+	
 	for (int i = 0; i < numPolis; i++)
 	{
 		houseArray[i]->print();
@@ -114,6 +114,8 @@ int main()
 	{
 		string resultPolis;
 		typePolis = ReturnString("Введите тип полиса: ");
+		searchLastName = ReturnString("Введите фамилию для поиска: ");
+
 		for (char& c : typePolis)
 		{
 			resultPolis += tolower(c);
@@ -121,24 +123,26 @@ int main()
 
 		if (resultPolis == "oms")
 		{
-			count = CountLastName(omsArray, ReturnString("Введите фамилию для поиска: "), numPolis);
+			count = CountLastName(omsArray, searchLastName, numPolis);
 		}
 		else if (resultPolis == "house")
 		{
-			count = CountLastName(houseArray, ReturnString("Введите фамилию для поиска: "), numPolis);
+			count = CountLastName(houseArray, searchLastName, numPolis);
 		}
 		else if (resultPolis == "all")
 		{
-			count = CountLastName(omsArray, houseArray, ReturnString("Введите фамилию для поиска: "), numPolis);
+			count = CountLastName(omsArray, houseArray, searchLastName, numPolis);
 		}
 		else
 		{
 			cout << "Такого типа полиса не существует! " << endl;
 			continue;
 		}
-
-		cout << "Количество полюсов на заданную фамилию: " << count << endl;
-		count = 0;
+		if (searchLastName != "Q" && searchLastName != "q")
+		{
+			cout << "Количество полюсов на заданную фамилию: " << count << endl;
+			count = 0;
+		}
 	}
 
 	for (int i = 0; i < numPolis; i++)
