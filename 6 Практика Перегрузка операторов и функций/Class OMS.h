@@ -5,7 +5,6 @@ using namespace std;
 
 namespace Model
 {
-
 	class OMS : private Polis
 	{
 	private:

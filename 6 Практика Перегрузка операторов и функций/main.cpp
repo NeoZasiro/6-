@@ -6,14 +6,7 @@
 #include <iomanip>
 using namespace std;
 using namespace Model;
-
-//Вариант А.
-//Задание 1. Использовать структуру классов,
-//спроектированную на  практическом занятии №5.
-//Наследование одного из производных классов осуществить по типу private.
-//Перегрузить оператор для работы с объектами классов
-//и использовать его для определения Вычисляемого показателя.
-
+using namespace Polis;
 string ReturnString(string text)
 {
 	cout << text;
@@ -33,7 +26,7 @@ int GetRandomNumber(int min, int max)
 
 	return randomValue;
 }
-int CountLastName(OMS* oms[], Model::House* house[], string searchLastName, int numPolis)
+int CountLastName(OMS* oms[], House* house[], string searchLastName, int numPolis)
 {
 	int count{};
 	for (int k = 0; k < numPolis; k++)
@@ -104,7 +97,7 @@ int main()
 				new House("Сергей", "Иванов", "01.01.2025", "ул. Советская, д. 321", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000)),
 				new House("Кирилл", "Федоров", "01.01.2024", "ул. Ломоносова, д. 654", GetRandomNumber(22, 59), GetRandomNumber(300000, 700000), GetRandomNumber(200000, 500000))
 		};
-	
+
 	for (int i = 0; i < numPolis; i++)
 	{
 		houseArray[i]->print();
@@ -115,7 +108,6 @@ int main()
 	{
 		string resultPolis;
 		typePolis = ReturnString("Введите тип полиса: ");
-		// searchLastName = ReturnString("Введите фамилию для поиска: ");
 
 		for (char& c : typePolis)
 		{
@@ -146,10 +138,9 @@ int main()
 			cout << "Такого типа полиса не существует! " << endl;
 			continue;
 		}
-		
+
 		cout << "Количество полюсов на заданную фамилию: " << count << endl;
 		count = 0;
-		
 	}
 
 	for (int i = 0; i < numPolis; i++)

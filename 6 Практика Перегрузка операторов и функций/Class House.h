@@ -6,9 +6,6 @@ using namespace std;
 
 namespace Model
 {
-
-
-
 	class House : public Polis
 	{
 	private:
