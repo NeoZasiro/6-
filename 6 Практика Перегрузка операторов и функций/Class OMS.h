@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Class Polis.h"
 using namespace std;
-
+using namespace Polis;
 namespace Model
 {
 	class OMS : private Polis

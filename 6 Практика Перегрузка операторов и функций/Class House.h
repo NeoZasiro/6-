@@ -3,7 +3,7 @@
 #include "Class Polis.h"
 
 using namespace std;
-
+using namespace Polis;
 namespace Model
 {
 	class House : public Polis
